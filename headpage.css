@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffe6f0; 
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    position: absolute;
+    top: 90px; 
+    left: 20px;
+    color: #d63384;
+    font-size: 32px;
+}
+
+/* CSS cho thanh điều hướng */
+.main-nav {
+    background-color: #f8c8dc; 
+    padding: 10px 20px;
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+    width: 100%;
+    box-sizing: border-box;
+
+.nav-button {
+    background-color: #d63384; 
+    color: white; 
+    padding: 10px 15px;
+    text-decoration: none; 
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease; 
+}
+
+.nav-button:hover {
+    background-color: #a32264; 
+}}
