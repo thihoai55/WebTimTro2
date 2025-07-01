@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm Trọ</title>
+    <link rel="stylesheet" href="StyleTimTro.css">
+</head>
+<body>
+    <div id="header-include"></div>
+    <h1>Tìm phòng trọ</h1>
+
+    <div class="search-container">
+        <input type="text" placeholder="Nhập tên đường, khu vực..." id="keyword">
+        
+        <select id="district">
+            <option value="">-- Chọn Quận/Huyện --</option>
+            <option value="Hue">Huế</option>
+            <option value="AnCuu">An Cựu</option>
+            <option value="PhuHau">Phú Hậu</option>
+        </select>
+
+        <select id="price">
+            <option value="">-- Chọn mức giá --</option>
+            <option value="1">Dưới 1 triệu</option>
+            <option value="2">1 - 2 triệu</option>
+            <option value="3">Trên 2 triệu</option>
+        </select>
+
+        <button onclick="timKiemTro()">Tìm kiếm</button>
+    </div>
+
+    <div id="result">
+        <!-- Kết quả tìm trọ sẽ hiển thị ở đây -->
+    </div>
+
+    <script>
+        fetch('Header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-include').innerHTML = data;
+            });
+
+        function timKiemTro() {
+            const keyword = document.getElementById("keyword").value;
+            const district = document.getElementById("district").value;
+            const price = document.getElementById("price").value;
+
+            // Demo: Hiển thị kết quả tạm (chưa kết nối dữ liệu thực)
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `
+                <h3>Kết quả tìm kiếm</h3>
+                <p><strong>Địa điểm:</strong> ${keyword || "Không có"}</p>
+                <p><strong>Khu vực:</strong> ${district || "Không chọn"}</p>
+                <p><strong>Giá:</strong> ${price || "Không chọn"}</p>
+                <p><em>(Hiển thị giả lập – chưa kết nối dữ liệu)</em></p>
+            `;
+        }
+    </script>
+</body>
+</html>
